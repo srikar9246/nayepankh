@@ -4,6 +4,7 @@ export const ExpandingCards = forwardRef(({
   className = "",
   items,
   defaultActiveIndex = 0,
+  onActiveCardClick,
   ...props
 }, ref) => {
   const [activeIndex, setActiveIndex] = useState(defaultActiveIndex);
@@ -40,8 +41,8 @@ export const ExpandingCards = forwardRef(({
 
   const handleClick = (index) => {
     setActiveIndex(index);
-    if (props.onActiveCardClick) {
-      props.onActiveCardClick(index);
+    if (onActiveCardClick) {
+      onActiveCardClick(index);
     }
   };
 

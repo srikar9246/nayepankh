@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { ThemeToggleButton2 } from './ui/theme-toggle-buttons';
 
 const LOGO_URL =
   'https://assets.zyrosite.com/YKbL494Mv8Ip3qgy/logo-AVLW2LLWZkI8v845.png';
@@ -59,6 +60,7 @@ export default function Header() {
                 </a>
               ))}
             </div>
+            <ThemeToggleButton2 className="theme-toggle-btn" />
             <a
               className="btn-donate-nav"
               href="https://nayepankh.com/donate"
@@ -88,13 +90,16 @@ export default function Header() {
       <div className={`mobile-menu-panel${menuOpen ? ' open' : ''}`}>
         <div className="mobile-menu-header">
           <span className="logo-text" style={{ fontSize: 18 }}>NayePankh</span>
-          <button
-            aria-label="Close menu"
-            onClick={() => setMenuOpen(false)}
-            style={{ background: 'none', color: 'var(--on-surface-variant)' }}
-          >
-            <span className="material-symbols-outlined">close</span>
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <ThemeToggleButton2 className="theme-toggle-btn" />
+            <button
+              aria-label="Close menu"
+              onClick={() => setMenuOpen(false)}
+              style={{ background: 'none', color: 'var(--on-surface-variant)', display: 'flex', alignItems: 'center' }}
+            >
+              <span className="material-symbols-outlined">close</span>
+            </button>
+          </div>
         </div>
         <div className="mobile-nav-links">
           {NAV_LINKS.map((link) => (

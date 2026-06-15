@@ -86,17 +86,17 @@ export default function News() {
 
             <motion.div
               className="cert-lightbox-content"
-              style={{ maxWidth: '750px', backgroundColor: '#fff' }}
+              style={{ maxWidth: '750px', backgroundColor: 'var(--surface-container-lowest)' }}
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <img src={activeNews.src} alt={activeNews.headline} className="cert-img-full" style={{ maxHeight: '80vh', objectFit: 'contain' }} />
-              <div className="cert-lightbox-info" style={{ backgroundColor: 'var(--primary)' }}>
-                <h3 className="font-headline-md" style={{ color: '#fff' }}>{activeNews.headline}</h3>
-                <p className="font-body-md" style={{ color: 'rgba(255,255,255,0.85)', marginTop: '4px' }}>Published in {activeNews.paper} • {activeNews.date}</p>
+              <img src={activeNews.src} alt={activeNews.headline} className="cert-img-full" style={{ maxHeight: '80vh', objectFit: 'contain', backgroundColor: 'var(--surface-container-lowest)' }} />
+              <div className="cert-lightbox-info" style={{ backgroundColor: 'var(--primary-container)' }}>
+                <h3 className="font-headline-md" style={{ color: 'var(--on-primary-container)' }}>{activeNews.headline}</h3>
+                <p className="font-body-md" style={{ color: 'var(--on-primary-container)', opacity: 0.85, marginTop: '4px' }}>Published in {activeNews.paper} • {activeNews.date}</p>
               </div>
             </motion.div>
           </motion.div>
